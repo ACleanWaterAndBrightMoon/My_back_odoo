@@ -1,0 +1,10 @@
+
+/* Copyright 2016 Onestein
+ * License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
+table.o_list_table th.o_list_record_remove_header span {
+  cursor: pointer;
+}
+
+.o_form_view.o_form_editable .o_form_sheet .o_list_record_remove > button {
+  color: #4c4c4c;
+}

@@ -1,0 +1,5 @@
+
+.modal .modal-content .modal-header.ui-draggable-handle {
+  cursor: move;
+}
+
