@@ -1,0 +1,20 @@
+2021-07-11 16:22:53 HKT 日志:  数据库系统中断；上一次的启动时间是在2021-07-11 16:20:48 HKT
+2021-07-11 16:22:55 HKT 日志:  数据库系统没有正确的关闭; 处于自动恢复状态中
+2021-07-11 16:22:55 HKT 日志:  redo 在 0/A978810 开始
+2021-07-11 16:22:55 HKT 日志:  0/A97AB68处的记录长度不合法
+2021-07-11 16:22:55 HKT 日志:  redo 在 0/A97AB40 完成
+2021-07-11 16:22:55 HKT 日志:  上一次完成事务是在日志时间2021-07-11 16:22:27.581393+08完成的.
+2021-07-11 16:22:55 HKT 日志:  多事务成员回卷保护现在被启用。
+2021-07-11 16:22:55 HKT 日志:  数据库系统准备接受连接
+2021-07-11 16:22:55 HKT 日志:  已启动autovacuum
+2021-07-11 17:06:05 HKT 閿欒:  鏃犳晥鐨勬鍒欒〃杈惧紡: quantifier operand invalid
+2021-07-11 17:06:05 HKT 璇彞:  
+	            UPDATE account_move SET write_date = write_date WHERE id = (
+	                SELECT id FROM account_move
+	                WHERE journal_id = 1 AND name != '/' AND sequence_prefix !~ '^(?:.*?)(?:((?<=\D)|(?<=^))((20|21)?\d{2}))(?:\D+?)$'  AND move_type NOT IN ('out_refund', 'in_refund') 
+	                AND sequence_prefix = (SELECT sequence_prefix FROM account_move WHERE journal_id = 1 AND name != '/' AND sequence_prefix !~ '^(?:.*?)(?:((?<=\D)|(?<=^))((20|21)?\d{2}))(?:\D+?)$'  AND move_type NOT IN ('out_refund', 'in_refund')  ORDER BY id DESC LIMIT 1)
+	                ORDER BY sequence_number DESC
+	                LIMIT 1
+	            )
+	            RETURNING name;
+	        
